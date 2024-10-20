@@ -21,10 +21,10 @@ local currentrom = ReSt.GameData.LatestRoom.Value
 local roomlist = Wc.CurrentRooms
 local currentrommodel = roomlist[currentrom]
 
-if Char.Key == false and currentrommodel.Lock == false then
+currentrommodel.Lock.UnlockPrompt.Triggered:Connect(function()
+		if Char.Key == false then
   print("mf equip your skele key, and make sure the room is locked")
 else
-  currentrommodel.Lock.UnlockPrompt.Triggered:Connect(function()
             	Char:WaitForChild("Humanoid").Health = 0
 				debug.setupvalue(
 					getconnections(game:GetService("ReplicatedStorage").RemotesFolder.DeathHint.OnClientEvent)[1].Function,
@@ -34,5 +34,5 @@ else
 						"*gives you -100 revives*"
 					}
 				)
-  end
 end
+end)
