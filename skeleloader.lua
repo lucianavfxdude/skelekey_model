@@ -15,6 +15,7 @@ local Hum = Char:WaitForChild("Humanoid")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
 
 local skelekey = LoadCustomInstance("https://github.com/lucianavfxdude/skelekey_model/blob/main/rawskeleton.rbxm?raw=true")
+skelekey.Name = "SkeletonKey"
 skelekey.Parent = Plr.Backpack
 
 local currentrom = ReSt.GameData.LatestRoom.Value
@@ -22,7 +23,7 @@ local roomlist = Wc.CurrentRooms
 local currentrommodel = roomlist[currentrom]
 
 currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
-	if Char.Key == false then
+	if Char.SkeletonKey == false then
 			print("dont kill him")
 	else
 						              	Char:WaitForChild("Humanoid").Health = 0
