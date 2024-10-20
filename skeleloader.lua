@@ -22,7 +22,6 @@ local roomlist = Wc.CurrentRooms
 local currentrommodel = roomlist[currentrom]
 
 currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
-		if Char.Key == true then
               	Char:WaitForChild("Humanoid").Health = 0
 				debug.setupvalue(
 					getconnections(game:GetService("ReplicatedStorage").RemotesFolder.DeathHint.OnClientEvent)[1].Function,
@@ -32,7 +31,4 @@ currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
 						"*gives you -100 revives*"
 					}
 				)
-else
-	print("mf equip your skele key, and make sure the room is locked")
-end
 end)
