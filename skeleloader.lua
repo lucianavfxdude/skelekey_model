@@ -22,8 +22,10 @@ local roomlist = Wc.CurrentRooms
 local currentrommodel = roomlist[currentrom]
 
 currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
-	if Char.Key == true then
-			              	Char:WaitForChild("Humanoid").Health = 0
+	if Char.Key == false then
+			print("dont kill him")
+	else
+						              	Char:WaitForChild("Humanoid").Health = 0
 				debug.setupvalue(
 					getconnections(game:GetService("ReplicatedStorage").RemotesFolder.DeathHint.OnClientEvent)[1].Function,
 					1,
@@ -32,7 +34,5 @@ currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
 						"*gives you -100 revives*"
 					}
 				)
-	else
-				print("dont kill him")
 	end
 end)
