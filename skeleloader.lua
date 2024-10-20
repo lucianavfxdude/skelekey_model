@@ -21,7 +21,7 @@ local currentrom = ReSt.GameData.LatestRoom.Value
 local roomlist = Wc.CurrentRooms
 local currentrommodel = roomlist[currentrom]
 
-currentrommodel.Lock.UnlockPrompt.Triggered:Connect(function()
+currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
 		if Char.Key == false then
   print("mf equip your skele key, and make sure the room is locked")
 else
