@@ -12,28 +12,26 @@ local Plr = Players.LocalPlayer
 local Char = Plr.Character or Plr.CharacterAdded:Wait()
 local Hum = Char:WaitForChild("Humanoid")
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
-
-local skelekey = LoadCustomInstance("https://github.com/lucianavfxdude/skelekey_model/blob/main/rawskeleton.rbxm?raw=true")
-skelekey.Name = "SkeletonKey"
+local skelekey = game:GetObjects(getsynasset("PlushProject/MainPlushies/max.rbxm"))[1]
+-- skelekey.Name = "SkeletonKey"
 skelekey.Parent = Plr.Backpack
 
-local currentrom = ReSt.GameData.LatestRoom.Value
-local roomlist = Wc.CurrentRooms
-local currentrommodel = roomlist[currentrom]
+-- local currentrom = ReSt.GameData.LatestRoom.Value
+-- local roomlist = Wc.CurrentRooms
+-- local currentrommodel = roomlist[currentrom]
 
-currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
-	if Char.SkeletonKey == false then
-			print("dont kill him")
-	else
-						              	Char:WaitForChild("Humanoid").Health = 0
-				debug.setupvalue(
-					getconnections(game:GetService("ReplicatedStorage").RemotesFolder.DeathHint.OnClientEvent)[1].Function,
-					1,
-					{
-						"mf dont use a spawned in skeleton key",
-						"*gives you -100 revives*"
-					}
-				)
-	end
-end)
+-- currentrommodel.Door.Lock.UnlockPrompt.Triggered:Connect(function()
+-- 	if Char.SkeletonKey == false then
+-- 			print("dont kill him")
+-- 	else
+-- 						              	Char:WaitForChild("Humanoid").Health = 0
+-- 				debug.setupvalue(
+-- 					getconnections(game:GetService("ReplicatedStorage").RemotesFolder.DeathHint.OnClientEvent)[1].Function,
+-- 					1,
+-- 					{
+-- 						"mf dont use a spawned in skeleton key",
+-- 						"*gives you -100 revives*"
+-- 					}
+-- 				)
+-- 	end
+-- end)
